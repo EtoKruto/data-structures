@@ -6,7 +6,7 @@ var Queue = function() {
   // Use an object with numeric keys to store values
   var storage = {};
 
-  // debugger;
+
   // Implement the methods below
 
   // Add a string to the back of the queue
@@ -25,11 +25,6 @@ var Queue = function() {
       sizeOfObj--;
       return firstItem;
     }
-    // else if (first === last && size === 0) {
-    //   var firstItem = storage[first];
-    //   last = 0;
-    //   return firstItem;
-    // }
   };
 
   // // Return the number of items in the queue

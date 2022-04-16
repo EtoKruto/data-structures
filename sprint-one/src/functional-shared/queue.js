@@ -36,5 +36,3 @@ queueMethods = {
     return this.sizeOfObj;
   }
 };
-
-

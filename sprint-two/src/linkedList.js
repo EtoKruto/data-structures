@@ -9,34 +9,25 @@ var LinkedList = function () {
   list.addToTail = function (value) {
     //don't have a tail
     if (!this.tail) {
-      this.tail = Node(value);
-      this.head = Node(value);
+      this.tail = Node(value); //tail = {value:4, next: null}
+      this.head = this.tail; //head = {value:4, next: null}
 
     } else {
       //have a tail
-      this.tail.next = Node(value); //head or tails
-      this.tail = Node(value);
-      this.head.next = this.tail;
+      this.head.next = Node(value); //head = {value: 4, next:{value:5, next: null}} // Node = {value:5, next: null}
+      this.tail = this.head.next;//tail ={value:5, next: null}
+
     }
 
   };
 
   // .removeHead() method, removes the first node from the list and returns its value
   list.removeHead = function () {
-    //this.head.next = Node(value);
-    // this.head = this.head.next;
-    if (this.head) {
-      var headValue = this.head.value;
-      // if (this.head.next) {
-      this.head = this.head.next;
+    if (this.head) { // head = {value: 4, next:{value:5, next: null}}
+      var headValue = this.head.value; //head = 4
+      this.head = this.head.next; // head = {value:5, next: null}
       return headValue;
-      // } else {
-      //   this.head = null;
-      //   this.tail = null;
-      //   return headValue;
-      // }
     }
-    //return undefined; //maybe not null but undefined if there is nothing to remove and we have to return something like how we returned something in Pop
   };
 
   // .contains() method, returns boolean reflecting whether or not the passed-in value is in the linked list
@@ -52,12 +43,10 @@ var LinkedList = function () {
         temp = temp.next;
       }
     }
-
     if (temp.value === target) {
       return true;
     } else {
       return false;
-
     }
   };
 
